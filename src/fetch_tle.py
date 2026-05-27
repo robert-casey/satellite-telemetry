@@ -12,7 +12,7 @@ PASSWORD = os.getenv("SPACETRACK_PASS")
 # Space-Track API base URLs
 BASE_URL = "https://www.space-track.org"
 LOGIN_URL = f"{BASE_URL}/ajaxauth/login"
-TLE_URL = f"{BASE_URL}/basicspacedata/query/class/tle_latest/NORAD_CAT_ID/25544/orderby/EPOCH desc/limit/1/format/json"
+TLE_URL = f"{BASE_URL}/basicspacedata/query/class/gp/NORAD_CAT_ID/25544/orderby/EPOCH desc/limit/1/format/json"
 
 def fetch_tle():
     with requests.Session() as session:
