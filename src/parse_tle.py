@@ -19,5 +19,8 @@ if __name__ == "__main__":
     with open("data/tle_raw.json") as f:
         raw = json.load(f)
 
-    parsed = parse_gp_data(raw[0])
-    print(json.dumps(parsed, indent=2))
+    parsed = [parse_gp_data(record) for record in raw]
+
+    for satellite in parsed:
+        print(json.dumps(satellite, indent=2))
+        print("---")
